@@ -4,6 +4,7 @@ from pageObjects.signup_and_login_page import Login
 from utilities.customLogger import Loggen
 
 
+
 @pytest.mark.usefixtures("setup_and_teardown")
 class Test_signup:
 
@@ -16,7 +17,7 @@ class Test_signup:
         self.signupandloginobj = Login(self.driver)
         self.signupandloginobj.click_signupandlogin()
         self.signupandloginobj.enter_usernameandemail("rishitha naga","nagarishitha181292@gmail.com")
-        self.driver.save_screenshot("C:\Automation_practice_with_pytest\Screenshots\screen1.png")
+        self.driver.save_screenshot("C:\\Automation_practice_with_pytest\\Screenshots\\screen1.png")
 
 
     def test_login(self,setup_and_teardown):
@@ -24,7 +25,7 @@ class Test_signup:
         self.signupandloginobj = Login(self.driver)
         self.signupandloginobj.click_signupandlogin()
         self.signupandloginobj.enterlogindetails("nagarishitha181292@gmail.com","Rishitha@1812")
-        self.driver.save_screenshot("C:\Automation_practice_with_pytest\Screenshots\screen2.png")
+        self.driver.save_screenshot("C:\\Automation_practice_with_pytest\\Screenshots\\screen2.png")
 
 
 
