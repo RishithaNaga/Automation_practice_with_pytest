@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import pytest
 from selenium import webdriver
 from pageObjects.signup_and_login_page import Login
@@ -5,9 +10,7 @@ from utilities.customLogger import Loggen
 from utilities import excelUtilities
 import datetime
 import time
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 @pytest.mark.usefixtures("setup_and_teardown")
 class Test_ddt_signup:
