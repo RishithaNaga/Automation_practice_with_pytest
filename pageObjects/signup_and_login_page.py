@@ -37,9 +37,9 @@ class Login:
         try:
             error_msg=self.driver.find_element(By.XPATH,"//p[text()='Your email or password is incorrect!']")
             error_msg.is_displayed()
-            return "Yes"
+            return True
         except NoSuchElementException:
-            return "No"
+            return False
 
     def click_logout(self):
         self.driver.find_element(By.XPATH,'//a[@href="/logout"]').click()
