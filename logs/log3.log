@@ -1,0 +1,6 @@
+2024-10-18 05:53:12 [INFO] opening browser and navigating to url
+2024-10-18 05:53:12 [INFO] verifying home page
+2024-10-18 05:53:12 [INFO] clicking signup
+2024-10-18 05:53:13 [INFO] entering login details
+2024-10-18 05:53:15 [INFO] verifying logged in as username
+2024-10-18 05:53:15 [INFO] click logout and verifying account login page
