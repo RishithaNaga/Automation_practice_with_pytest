@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(autouse=True)
 def setup_and_teardown(request,browser):
@@ -8,7 +9,15 @@ def setup_and_teardown(request,browser):
     elif browser=="Firefox":
         driver=webdriver.Firefox()
     else:
-        driver=webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  # Optional: Run browser in headless mode
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        driver = webdriver.Remote(
+            command_executor="http://192.168.29.101:4444/wd/hub",
+            options=chrome_options
+        )
+        # driver=webdriver.Chrome()
     driver.get("https://automationexercise.com/")
     driver.maximize_window()
     request.cls.driver=driver
