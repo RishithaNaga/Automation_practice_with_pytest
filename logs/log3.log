@@ -1,6 +1,6 @@
-2024-10-18 05:53:12 [INFO] opening browser and navigating to url
-2024-10-18 05:53:12 [INFO] verifying home page
-2024-10-18 05:53:12 [INFO] clicking signup
-2024-10-18 05:53:13 [INFO] entering login details
-2024-10-18 05:53:15 [INFO] verifying logged in as username
-2024-10-18 05:53:15 [INFO] click logout and verifying account login page
+INFO     root:testcase_004_logout.py:21 opening browser and navigating to url
+INFO     root:testcase_004_logout.py:24 verifying home page
+INFO     root:testcase_004_logout.py:27 clicking signup
+INFO     root:testcase_004_logout.py:29 entering login details
+INFO     root:testcase_004_logout.py:31 verifying logged in as username
+INFO     root:testcase_004_logout.py:34 click logout and verifying account login page
