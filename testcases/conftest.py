@@ -10,11 +10,11 @@ def setup_and_teardown(request,browser):
         driver=webdriver.Firefox()
     else:
         chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Optional: Run browser in headless mode
+        # crome_options.add_argument("--headless")  # Optional: Run browser in headless mode
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         driver = webdriver.Remote(
-            command_executor="http://192.168.29.101:4444/wd/hub",
+            command_executor="http://localhost:4444/wd/hub",
             options=chrome_options
         )
         # driver=webdriver.Chrome()
