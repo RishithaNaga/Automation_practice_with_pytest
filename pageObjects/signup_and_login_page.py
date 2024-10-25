@@ -13,6 +13,7 @@ class Login:
     message_logintoyouraccount_xpath='//h2[text()="Login to your account"]'
     message_loggedinsasusername_xpath="//i[@class='fa fa-user']/parent::a"
     link_deleteaccount_xpath='//a[@href="/delete_account"]'
+    test_newusersignup_xpath="// div[ @class ='signup-form'] / child::h2[text() = 'New User Signup!']"
 
 
     def __init__(self,driver):
@@ -65,3 +66,8 @@ class Login:
             return "Account is deleted"
 
 
+    def verify_newusersignup(self):
+        if self.driver.find_element(By.XPATH,self.test_newusersignup_xpath).is_displayed():
+            pass
+        else:
+            raise NoSuchElementException
