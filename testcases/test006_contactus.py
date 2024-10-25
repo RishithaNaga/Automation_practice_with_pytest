@@ -33,7 +33,6 @@ class Test_contactus:
         contactuspage_obj.verifygetintouch()
         contactuspage_obj.enter_details("Rishitha","abc@gmail.com","hello","nothing")
         contactuspage_obj.uploadfile()
-        contactuspage_obj.click_ok()
         contactuspage_obj.verifysuccessmsg()
         basepage_obj.click_home()
         basepage_obj.verify_homepage()
