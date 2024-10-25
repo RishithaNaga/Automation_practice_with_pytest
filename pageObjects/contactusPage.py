@@ -24,20 +24,20 @@ class contactus_page:
         self.driver.find_element(By.XPATH,contactus_page.text_message_xpath).send_keys(usermsg)
 
     def verifygetintouch(self):
-        if self.obj.isdisplayed(By.XPATH,contactus_page.message_getintouch_xpath):
+        if self.driver.isdisplayed(By.XPATH,contactus_page.message_getintouch_xpath):
             print("Get in touch is visible")
         else:
             raise NoSuchElementException
 
     def uploadfile(self):
-        self.obj.find_element(By.XPATH,contactus_page.button_uploadfile_xpath).send_keys(contactus_page.filepath)
-        self.obj.find_element(By.XPATH,contactus_page.button_submit_xpath).click()
+        self.driver.find_element(By.XPATH,contactus_page.button_uploadfile_xpath).send_keys(contactus_page.filepath)
+        self.driver.find_element(By.XPATH,contactus_page.button_submit_xpath).click()
 
     def click_ok(self):
-        self.obj.switchto()
+        self.driver.switchto()
 
     def verifysuccessmsg(self):
-        if self.obj.isdisplayed(By.XPATH,contactus_page.message_success_xpath):
+        if self.driver.isdisplayed(By.XPATH,contactus_page.message_success_xpath):
             print("your details are entered successfully")
         else:
             raise NoSuchElementException
