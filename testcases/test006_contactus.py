@@ -9,6 +9,13 @@
 # 9. Click OK button
 # 10. Verify success message 'Success! Your details have been submitted successfully.' is visible
 # 11. Click 'Home' button and verify that landed to home page successfully
+
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import pytest
 
 from pageObjects.basePage import BasePage
