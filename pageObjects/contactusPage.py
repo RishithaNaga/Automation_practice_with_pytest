@@ -10,7 +10,7 @@ class contactus_page:
     text_message_xpath='//textarea[@id="message" and @name="message"]'
     message_getintouch_xpath='//h2[contains(text(),"Get In Touch")]'
     button_uploadfile_xpath='//input[@name="upload_file"]'
-    button_submit_xpath='//input[@value="Submit"]'
+    button_submit_xpath='//input[@type="submit"]'
     input_choosefile_xpath='//input[@type="file"]'
     filepath=r"C:\Users\ssest\OneDrive\Desktop\CCL Appn.docx"
     message_success_xpath='(//div[contains(text(),"Success! Your details have been submitted successfully.")])[1]'
@@ -19,7 +19,7 @@ class contactus_page:
         self.driver=driver
 
     def enter_details(self,username,usermail,usersubject,usermsg):
-        self.driver.find_element(By.XPATH,contactus_page.text_entername_xpath).send_keys(username)
+        self.driver.find_element(By.XPATH,contactus_page.text_username_xpath).send_keys(username)
         self.driver.find_element(By.XPATH,contactus_page.text_usermail_xpath).send_keys(usermail)
         self.driver.find_element(By.XPATH,contactus_page.text_subject_xpath).send_keys(usersubject)
         self.driver.find_element(By.XPATH,contactus_page.text_message_xpath).send_keys(usermsg)
@@ -35,10 +35,13 @@ class contactus_page:
         self.driver.find_element(By.XPATH,contactus_page.button_submit_xpath).click()
 
     def click_ok(self):
-        self.driver.switchto()
+        self.driver.switch_to.alert.accept()
 
     def verifysuccessmsg(self):
-        if self.driver.isdisplayed(By.XPATH,contactus_page.message_success_xpath):
+        ele=self.driver.find_element(By.XPATH,contactus_page.message_success_xpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", ele)
+        print(ele.value_of_css_property("color"))
+        if self.driver.find_element(By.XPATH,contactus_page.message_success_xpath).is_displayed():
             print("your details are entered successfully")
         else:
             raise NoSuchElementException

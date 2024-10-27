@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 class BasePage:
 
-    button_home_xpath="//a[@href='/'])[2]"
+    button_home_xpath="(//a[@href='/'])[2]"
     button_signup_login_xpath="//li/a[@href='/login']"
     button_products_xpath="//li/a[@href='/products']"
     button_cart_xpath="//li/a[@href='/view_cart']"
@@ -22,7 +22,7 @@ class BasePage:
         self.driver=driver
 
     def click_home(self):
-        self.driver.click(By.XPATH,BasePage.button_home_xpath)
+        self.driver.find_element(By.XPATH,BasePage.button_home_xpath).click()
 
     def verify_homepage(self):
         if self.driver.find_element(By.XPATH,BasePage.text_homepage_xpath).is_displayed():
